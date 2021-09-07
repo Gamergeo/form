@@ -5,10 +5,10 @@ $.fn.submitForm = function (options) {
 	
 	return this.each(function() {
 		let form = $(this).closestForm();
-		options.data =  form.objectifyForm();
+		options.data =  form.serialize();
 		options.error = (errorMessage) => {
 			form.handleError(errorMessage);
 		};
-		$.postJson(options);
+		$.post(options);
 	});
 }

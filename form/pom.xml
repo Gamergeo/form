@@ -89,6 +89,7 @@
                     					<source>src/main/resources/js/element/closestForm.js</source>
                     					<source>src/main/resources/js/element/submitForm.js</source>
                     					<source>src/main/resources/js/element/formAttribute.js</source>
+                    					<source>src/main/resources/js/element/formId.js</source>
                     					<source>src/main/resources/js/element/objectifyForm.js</source>
                   					</sources>
                 				</merger>
