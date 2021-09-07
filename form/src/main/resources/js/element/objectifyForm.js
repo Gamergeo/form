@@ -9,8 +9,17 @@ $.fn.objectifyForm = function() {
 		
 		//serialize data function
 		var returnArray = {};
-		for (var i = 0; i < formArray.length; i++){
-		    returnArray[formArray[i]['name']] = formArray[i]['value'];
+		for (var i = 0; i < formArray.length; i++) {
+			
+			let name = formArray[i]['name'];
+			let value = formArray[i]['value'];
+			
+			// Si l'attribut finit par date ou Date, c'est une date
+			if (name.endsWith('date') || name.endsWith('Date')) {
+				value = new Date($.parseDate(value));
+			}
+			
+		    returnArray[name] = value;
 		}
 		
 		return returnArray;
