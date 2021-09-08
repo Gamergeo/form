@@ -1,7 +1,7 @@
 /**
  * Save le form
  */
-$.fn.submitForm = function (options) {
+$.fn.submitFormAndRefresh = function (element, options) {
 	
 	return this.each(function() {
 		let form = $(this).closestForm();
@@ -9,6 +9,6 @@ $.fn.submitForm = function (options) {
 		options.error = (errorMessage) => {
 			form.handleError(errorMessage);
 		};
-		$.post(options);
+		element.postHtml(options);
 	});
 }

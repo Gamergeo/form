@@ -7,6 +7,7 @@ $.fn.formAttribute = function(name) {
 	
 	this.each(function() {
 		attributes = attributes.add($(this).closestForm().find("input[name='" + name + "']"));
+		attributes = attributes.add($(this).closestForm().find("select[name='" + name + "']"));
 	});
 	
 	return attributes;

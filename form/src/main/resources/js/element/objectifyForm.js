@@ -15,7 +15,7 @@ $.fn.objectifyForm = function() {
 			let value = formArray[i]['value'];
 			
 			// Si l'attribut finit par date ou Date, c'est une date
-			if (name.endsWith('date') || name.endsWith('Date')) {
+			if (name.endsWith('date') || name.endsWith('Date') && value) {
 				value = new Date($.parseDate(value));
 			}
 			
