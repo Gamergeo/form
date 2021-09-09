@@ -19,7 +19,12 @@ $.fn.objectifyForm = function() {
 				value = new Date($.parseDate(value));
 			}
 			
-		    returnArray[name] = value;
+			// Cas des checkboxes
+			if (!$.isEmptyObject(returnArray[name])) {
+				returnArray[name] = returnArray[name] + "," + value;
+			} else {
+				returnArray[name] = value;	
+			}
 		}
 		
 		return returnArray;
