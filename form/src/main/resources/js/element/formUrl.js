@@ -10,9 +10,13 @@ $.fn.formUrl = function (method) {
 			
 	} else {
 		let namespace = form.data("namespace");
+		
+		if ($.isEmptyObject(method)) {
+			method = form.attr("action");
+		}
 	
 		if ($.isEmptyObject(namespace)) {
-			throw 'namespace must be in set n form data';
+			return method;
 		}
 		
 		return namespace + "/" + method + ".do";
