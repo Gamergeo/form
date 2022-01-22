@@ -9,7 +9,7 @@ $.fn.submitForm = function (options) {
 	
 	return this.each(function() {
 		let form = $(this).closestForm();
-		options.data =  form.objectifyForm();
+		
 		options.error = (errorMessage) => {
 			form.handleError(errorMessage);
 		};
@@ -18,6 +18,12 @@ $.fn.submitForm = function (options) {
 			options.url = $(this).formUrl();
 		}
 		
+		if (form.attr("enctype") == "multipart/form-data") {
+			return form.submitMultipartForm(options);
+		}
+		
+		options.data =  form.objectifyForm();
+
 		$.post(options);
 	});
 }
