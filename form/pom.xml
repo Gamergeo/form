@@ -97,6 +97,7 @@
                     					<source>src/main/resources/js/element/formId.js</source>
                     					<source>src/main/resources/js/element/objectifyForm.js</source>
                     					<source>src/main/resources/js/element/enterKeyUp.js</source>
+                    					<source>src/main/resources/js/element/saveForm.js</source>
                   					</sources>
                 				</merger>
               				</mergers>
